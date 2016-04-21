@@ -18,25 +18,20 @@ public class ReserveHotel {
     private static HashSet<Hotel> getAllHotelDetails() {
         HashSet<Hotel> hotelSet = new HashSet<Hotel>();
         Hotel hotelObj;
-        hotelObj = new Hotel();
-        hotelObj.set_hotelName("SWN Star Hotel");
-        hotelObj.set_rating(3);
+        hotelObj = new Hotel("SWN Star Hotel", 3);
         hotelObj.set_regularWeekdayRate(1000);
         hotelObj.set_rewardWeekdayRate(800);
         hotelObj.set_regularWeekendRate(1500);
         hotelObj.set_rewardWeekendRate(1250);
         hotelSet.add(hotelObj);
-        hotelObj = new Hotel();
-        hotelObj.set_hotelName("SWN Deluxe Hotel");
-        hotelObj.set_rating(4);
+        hotelObj = new Hotel("SWN Deluxe Hotel", 4);
+
         hotelObj.set_regularWeekdayRate(2000);
         hotelObj.set_rewardWeekdayRate(1500);
         hotelObj.set_regularWeekendRate(1500);
         hotelObj.set_rewardWeekendRate(1200);
         hotelSet.add(hotelObj);
-        hotelObj = new Hotel();
-        hotelObj.set_hotelName("SWN Executive Hotel");
-        hotelObj.set_rating(5);
+        hotelObj = new Hotel("SWN Executive Hotel", 5);
         hotelObj.set_regularWeekdayRate(3000);
         hotelObj.set_rewardWeekdayRate(2500);
         hotelObj.set_regularWeekendRate(2500);

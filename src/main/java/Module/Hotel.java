@@ -9,6 +9,14 @@ public class Hotel {
     private int _rewardWeekendRate;
     private int _totalRate;
 
+    public Hotel() {
+    }
+
+    public Hotel(String _hotelName, int _rating) {
+        this._hotelName = _hotelName;
+        this._rating = _rating;
+    }
+
     public int get_rating() {
         return _rating;
     }
