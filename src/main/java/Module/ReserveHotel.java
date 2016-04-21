@@ -54,6 +54,7 @@ public class ReserveHotel {
         }
         for (Hotel hotelObj : allHotels) {
             hotelObj.set_totalRate(customerType, totalWeekday, totalWeekend);
+            hotelObj.printDetails();
         }
         return allHotels;
     }
@@ -65,10 +66,14 @@ public class ReserveHotel {
             int hotelRate = hotelObj.get_totalRate();
             if (hotelRate <= lowRate) {
                 if (hotelRate == lowRate) {
+
                     outputHotel = checkHighestRating(hotelObj, outputHotel);
+
                 } else {
+
                     outputHotel = hotelObj;
                 }
+                lowRate = outputHotel.get_totalRate();
             }
         }
         return outputHotel;

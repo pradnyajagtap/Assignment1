@@ -20,12 +20,16 @@ public class Reserve {
             if (inputArray.length > 1) {
                 customerType = inputArray[0];
                 reserveDates = getDates(inputArray[1]);
-                System.out.println("For Customer : " + customerType);
-                System.out.println("For dates : " + reserveDates.toString());
-                Hotel cheapestHotel = ReserveHotel.getCheapestHotel(customerType, reserveDates);
-                if (cheapestHotel != null) {
-                    System.out.println("Cheapest Hotel Details Are : ");
-                    cheapestHotel.printDetails();
+                if (reserveDates != null) {
+                    System.out.println("For Customer : " + customerType);
+                    System.out.println("For dates : " + reserveDates.toString());
+                    Hotel cheapestHotel = ReserveHotel.getCheapestHotel(customerType, reserveDates);
+                    if (cheapestHotel != null) {
+                        System.out.println("Cheapest Hotel Details Are : ");
+                        cheapestHotel.printDetails();
+                    }
+                } else {
+                    System.out.println("Please Enter Correct Date Input...");
                 }
             } else {
                 System.out.println("Please Enter Date Input...");
@@ -45,8 +49,10 @@ public class Reserve {
                 dateSet.add(newDate);
             } catch (ParseException e) {
                 e.printStackTrace();
+                return null;
             }
         }
         return dateSet;
+
     }
 }
